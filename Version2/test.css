@@ -1,0 +1,134 @@
+html{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+
+#macarte {
+    width: 80%; 
+    padding: 0;
+    padding: 0;
+    height: 30%;
+    margin-left:15%;
+    }
+
+/*
+body {
+  position: absolute;
+  min-height: 100%;
+  margin: 50 0 0 40%;
+  padding: 50 20px;
+  background: #FFFFFF;
+}
+*/
+
+#footer{
+	bottom: 0;
+	height: 26%;
+	max-height: 260px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+
+	color:black;
+	background-color:#E0F8E6;
+}
+
+#header{
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	color:black;
+	height : 10% ;
+	background-color:#E0F8E6;
+}
+
+#nav {
+	padding: 0; margin: 0;
+	text-align: center; /* centrer le texte */
+}
+#nav li {
+	display: inline;
+	list-style: none;
+}
+#nav a {
+	display:inline-block;
+	margin: 25 30px;
+}
+
+
+
+#monForm {
+/*
+   position:fixed;
+*/
+   top:50%;
+   left:50%;
+   width:300px; /* A toi de donner la bonne largeur */
+   height:200px; /* A toi de donner la bonne hauteur */
+   margin-left:40%; /* -largeur/2 */
+/*
+   margin-top:00px; /* -hauteur/2 */
+
+}
+
+#gauche{
+float:left;
+	width:10%;
+	height:80%;
+	background-color:#C0C0C0;
+    
+}
+
+
+
+
+/*
+#droite{
+	float:right;
+	background-color:white;
+	width:60%;
+	margin:0;
+}
+*/
+
+#contenu {
+	width:100%;
+	height:80%;
+	background-color:white;
+	}
+    
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+ 
+}
+
+#cadre {
+padding:3px;
+border:5px double;
+border-color: #97DFC6;
+background-color:white;
+width:100%;
+height:20%; }
+
+/*
+input:focus, textarea:focus {
+ background-color:white;
+ }
+input[type=submit]:focus, input[type=reset]:focus {
+ background-color:#FFF3F3;
+}
+*/
