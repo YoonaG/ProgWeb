@@ -17,13 +17,6 @@
 
 	
     <body>
-        
-                <header id="header"> 
-        <ul id="nav">
-        <li><a href="test2.php">Accueil</a></li>
-        <li><a href="#">À propos</a></li>
-        </ul>
-        </header>
 
 
 
@@ -41,7 +34,6 @@
  </script>
     
 
-<h1>Les Formations </h1>
 
 <?php
         
@@ -50,7 +42,25 @@
        $dis = $_POST["discipline"] ;
        $diplome = $_POST["diplome"] ;
 
- 
+ $requete = $dbh->prepare( " SELECT count(libelle) AS nb ,diplome from Z_CliqueFormation where libelle=\"$dis\" AND diplome=\"$diplome\" ") ;
+
+       
+
+       	$requete->execute();
+       	$compter=0;
+       	 while ($donnees = $requete->fetch()) {
+					$compter = $donnees['nb'] ; }
+       	
+
+       	echo "loool = $compter";
+       	if ( $compter==0 ) {
+       		$action = " INSERT INTO Z_CliqueFormation(Diplome, Libelle, Clique) VALUES (\"$diplome\",\"$dis\",1) ";
+       			$dbh->exec($action); 
+       			//echo "$action";
+       	}  else {
+       		$action = " UPDATE Z_CliqueFormation SET clique=clique+1 WHERE libelle=\"$dis\" AND diplome=diplome+\"$diplome\"  ";
+            $dbh->exec($action);
+       	}
 
         echo " $niveau ";
         echo " $dis ";
@@ -74,9 +84,6 @@
         
         //~ echo "Le tableau contient ".$nb."éléments";
         //~ echo " $facet_fil ";
-        
-       
-        
       
       echo" <table >";
 			echo "<caption>Les formations<caption>";
@@ -93,8 +100,7 @@
 			echo " </tr> " ;
        
 			for($y = 0; $y <$nb  ; ++$y) {
-                //~ echo " <form action=\"intermediaire.php\" method=\"get\">";
-                 echo " <form action=\"fiche2.php\" method=\"get\">";
+                echo " <form action=\"intermediaire.php\" method=\"get\">";
 				$test = $data["records"][$y]["fields"]["etablissement"] ;
 				$value4 = $data["records"][$y]["fields"]["dep_etab_lib"] ;
 				$value1 = $data["records"][$y]["fields"]["diplome_lib"] ;
@@ -124,33 +130,18 @@
 					echo "<tr id=\"lignePair\" >  "; }
                 else { 
 					echo "<tr id=\"ligneImPair\" > "; }
-                 echo "<td><input name=\"uai\"  id=\"coucou\" value=\"$test\" readonly></td>";
-                echo "<td><input name=\"sec\"  id=\"coucou\" value=\"$value0\" readonly></td>";
-                echo "<td><input name=\"dip\"  id=\"coucou\" value=\"$value1\" readonly></td>";
-                echo "<td><input name=\"region\"  id=\"coucou\" value=\"$value2\"readonly></td>";;
-                echo "<td><input name=\"etab\"  id=\"coucou\" value=\"$value3\" readonly></td>"; 
-                echo "<td>$value4";
-				
-                //~ if ( $site!="") {
-                    echo " <div class=\"form-style-2\">";
-                echo "<td> <input name=\"name\" id=\"coucou\" type=\"submit\" value=\"voir plus\"></td>"; 
-                echo "</div>" ;
-                //~ }
-                //~ else { echo "<td>aucun site disponible"; }
-             
+				echo "<td>$value0";
+				echo "<td>$value1";
+				echo "<td>$value2";
+				echo "<td>$value3";
+				echo "<td>$value4";
+                echo "<td>$site";
+                echo "<td> <input name=\"name\" id=\"$site\" type=\"submit\" value=\"$site\">coucpi </td>";
              
 				echo "</tr>";
 			
 		   
                 echo " </form>" ;
-                
-               
-                
-                
-                
-                
-                
-
 	   }
        
 
@@ -159,9 +150,8 @@
   
   </table>
 
-<h2>>Nombre de résultat(s) : <?php echo  $nb ; ?></h2
+Nombre de résultat(s) : <?php echo  $nb ; ?>
 <!--
-//~ echo "<td>$value4";
 	</table>
 -->
 </html>

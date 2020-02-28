@@ -12,18 +12,11 @@
 </head>
 
 <body>
-  
-  <img src="banderole.jpg" alt="Photo de montagne" height="30%" width=100% />
-	
+	coucou 
 <?php include("connexion.php") ;?>
 
- <header id="header"> 
-        <ul id="nav">
-        <li><a href="test2.php">Accueil</a></li>
-        <li><a href="#">À propos</a></li>
-        </ul>
-        </header>
-
+mdr
+<?php echo "lol ";?>
 
     
   
@@ -126,37 +119,27 @@
 
                      }
 
-
-       echo " </select> " ;
-
-       echo "
+ ?>
+        </select>
 
    </p>
    
    
    <p>
-        <input type=\"submit\" value=\"Envoyer\"> 
-        <INPUT TYPE=\"reset\" NAME=\"Renitialiser\" VALUE=\"Rénitialiser\">
+        <input type="submit" value="Envoyer"> 
+        <INPUT TYPE="reset" NAME="Renitialiser" VALUE="Rénitialiser">
 
  </p>
      
 
         
-        </form>  " ;
+        </form>
 
-         ?>
-
-         <h1> Classement </h1> 
-
-                          <div class="imageCentre">
-                  <img alt="" src="2.png"  height="100px" width=10%">
-                     <img alt="" src="1.png"  height="150px" width=10%">
-                  <img alt="" src="3.png"  height="100px" width=10%">
-    
-
-                  </div>
-
-
+<?php
+include("./Classe/Etablissement.php") ;
+$perso = new Etablissement("coucou","lol");
+$perso->getID();
+?>
 
 
 <table >
@@ -168,22 +151,16 @@
             </thead>
         </tr>
             <?php
-                $y=0;
+
                 $reponse = $dbh->prepare('SELECT url , clique FROM `Z_CliqueEtablissement`  ORDER BY clique DESC LIMIT 5 ');
                $reponse->execute();
                 while ($donnees = $reponse->fetch()) {
                     $url = $donnees['url'] ;
                     $clique = $donnees['clique'] ;
-                    if ($y%2==0) {
-                   echo  "<tr id=\"lignePair\" >" ; }
-                 
-                   else {
-                    echo  "<tr id=\"ligneImPair\" >" ;
-                   }
+                   echo  "<tr>" ;
                    echo "<td> $url ";
                    echo "<td> $clique ";
                    echo  "</tr>" ;
-                   $y = $y+1 ;
                 }
 
                 ?>
@@ -196,36 +173,25 @@
                 <td> Diplome  </td>
                 <td> discipline </td>
                 <td> clique </td>
-                <td> ecole </td>
             </thead>
         </tr>
             <?php
-                $i = 0 ;
-                $reponse = $dbh->prepare('SELECT Diplome , libelle ,clique,ecole FROM `Z_CliqueFormation`  ORDER BY clique ASC LIMIT 3 ');
+
+                $reponse = $dbh->prepare('SELECT Diplome , libelle ,clique FROM `Z_CliqueFormation`  ORDER BY clique DESC LIMIT 5 ');
                $reponse->execute();
                 while ($donnees = $reponse->fetch()) {
                     $dip = $donnees['Diplome'] ;
                     $clique = $donnees['clique'] ;
                     $lib = $donnees['libelle'] ;
-                    $ec = $donnees['ecole'] ;
-                    if ($i%2==0) {
-                   echo  "<tr id=\"lignePair\" >" ; }
-                 
-                   else {
-                    echo  "<tr id=\"ligneImPair\" >" ;
-                   }
-                   echo "<td > $dip ";
+                   echo  "<tr>" ;
+                   echo "<td> $dip ";
                    echo "<td> $lib ";
                    echo "<td> $clique ";
-                   echo "<td> $ec ";
                    echo  "</tr>" ;
-                   $i+=1 ;
                 }
 
                 ?>
                  </table>
-
-
 
 
 
