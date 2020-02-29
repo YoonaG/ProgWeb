@@ -1,0 +1,358 @@
+html{
+	height: 100%;
+    width:100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#gauche{
+	float:left;
+	background-color:#40E0D0;
+	width:33%;
+	height:250px;
+	font-weight: bold;
+	text-align: :center;
+	
+}
+
+#centre{
+	float:left;
+	background-color:#FAEBD7;
+
+	width:33%;
+	height:250px;
+	font-weight: bold;
+	text-align: :center;
+	
+}
+
+
+#ac {
+
+color:black;
+background-color:white;
+background-image:url(banderole.jpg);
+
+
+}
+
+
+
+
+#droite{
+	float:left;
+	background-color:#FAEBD7;
+	width:33%;
+	height:250px;
+	font-weight: bold;
+	text-align: center;
+	
+}
+
+#bas {
+	background-color:#FAEBD7;
+	width:100%;
+	height:40%;
+	
+}
+
+#contenu {
+	width:100%;
+	height:80%;
+	background-color:white;
+	}
+    
+#macarteboite {
+/*
+    width: 100%; 
+*/
+/*
+    height: 40%;
+*/
+    background-color:#40E0D0;
+    }
+
+#macarte {
+    width: 80%; 
+    padding: 0;
+    padding: 0;
+    height: 40%;
+    margin-left:10%;
+    margin-top:5%;
+     background-color:#40E0D0;
+    }
+
+/*
+body {
+  position: absolute;
+  min-height: 100%;
+  margin: 50 0 0 40%;
+  padding: 50 20px;
+  background: #FFFFFF;
+}
+*/
+
+
+#footer{
+	bottom: 0;
+	height: 26%;
+	max-height: 260px;
+}
+#footer{
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	color:black;
+	height : 10% ;
+	background-color:#130E0A;
+}
+
+#header{
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	color:black;
+	height : 10% ;
+	background-color:#130E0A;
+}
+
+#nav {
+	padding: 0; margin: 0;
+	text-align: center; /* centrer le texte */
+}
+#nav li {
+	display: inline;
+	list-style: none;
+}
+#nav a {
+	display:inline-block;
+	margin: 25 30px;
+}
+
+
+
+#monForm {
+  /* Uniquement centrer le formulaire sur la page */
+  margin: 0 auto;
+  width: 60%;
+  height: 25%;
+  margin-top:5%;
+  /* Encadré pour voir les limites du formulaire */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  text-align : center ;
+  background: linear-gradient(to top, #ffffcc 0%, #99ffcc 100%);
+  vertical-align: center;
+}
+
+#monCadre {
+  /* Uniquement centrer le formulaire sur la page */
+  margin: 0 auto;
+  width: 50%;
+  height: 25%;
+  /* Encadré pour voir les limites du formulaire */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  text-align : center ;
+  background: linear-gradient(to top,#FAEBD7 0%, #40E0D0 100%);
+  vertical-align: center;
+}
+
+input, select, textarea {
+  /* Pour s'assurer que tous les champs texte ont la même police.
+     Par défaut, les textarea ont une police monospace */
+  font: 1em sans-serif;
+
+  /* Pour que tous les champs texte aient la même dimension */
+  width: 50%;
+  box-sizing: border-box;
+
+  /* Pour harmoniser le look & feel des bordures des champs texte */
+  border: 1px solid #999;
+  background-color:white;
+}
+
+
+
+.button {
+  /* Pour placer le bouton à la même position que les champs texte */
+  padding-left: 90px; /* même taille que les étiquettes */
+}
+
+button {
+  /* Cette marge supplémentaire représente grosso modo le même espace que celui
+     entre les étiquettes et les champs texte */
+  margin-left: .5em;
+}
+
+
+
+
+/*
+#droite{
+	float:right;
+	background-color:white;
+	width:60%;
+	margin:0;
+}
+*/
+
+#contenu {
+	width:100%;
+	height:80%;
+	background-color:white;
+	}
+    
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+ 
+}
+
+#cadre {
+padding:3px;
+border:5px double;
+border-color: #97DFC6;
+background-color:white;
+width:100%;
+height:20%; }
+
+#lignePair {
+ background-color:#FAEBD7; }
+ 
+#ligneImpair {
+ background-color:#40E0D0; }
+
+table{
+  border-collapse: collapse;
+/*
+  margin-left:5%;
+   vertical-align: center;
+*/
+   margin: auto;
+}
+
+
+td{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.form-style-2{
+/*
+	max-width: 500px;
+*/
+	padding: 20px 12px 10px 20px;
+	font: 13px Arial, Helvetica, sans-serif;
+    vertical-align: center;
+    margin: auto;
+}
+
+#coucou {
+
+	border: none;
+    size:255;
+/*
+	padding: 8px 15px 8px 15px;
+*/
+	background: none;
+    width:100%;
+/*
+	color: #fff;
+*/
+/*
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+      box-sizing: border-box;
+	-moz-border-radius: 3px; 
+*/
+    }
+
+#header{
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	color: #FF0000;
+	height : 10% ;
+	background-color:#40E0D0;
+    position:relative;
+}
+    
+    
+    h1 {
+    font-size: 10rem;
+    text-align:center; 
+    color:#40E0D0;
+    background-color:#FAEBD7;
+}
+
+    h2 {
+    font-size: 5rem;
+    text-align:center; 
+    color:#FAEBD7;
+    background-color:#40E0D0;
+}
+
+    .titre {
+    	width: :100%;
+    	height: 10px;
+    font-size: 5rem;
+    text-align:center; 
+    color:#FAEBD7;
+    background-color:#40E0D0;
+}
+
+.podium {
+  text-align: center;
+}
+.podium div {
+  width:100px;
+  height:100px;
+}
+.imageCentre{
+       text-align:center;
+}
+.galerie_image_gauche
+  {
+  display: inline;
+  float: left;
+  margin: auto;
+  }
+.galerie_image_droite
+  {
+  display: inline;
+  float: right; 
+    margin: auto;
+  }
+    
+   #text-chiffre {
+   	font-size: 2rem;
+    text-align:center; 
+    color:white;
+
+   }
+
+      #text-normal  {
+   	font-size: 2rem;
+    text-align:center; 
+    color:white;
+
+   }
+
